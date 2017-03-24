@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { setIsETFOpen, addETF } from './actions/actions';
 import TextField from 'material-ui/TextField';
 
-
 function TF(props) {
 
   const { open, ...rest}=props;
@@ -35,9 +34,8 @@ class ExpandableTextFieldContainer extends Component {
 }
 
 ExpandableTextFieldContainer.propTypes = {
-  children: PropTypes.object.isRequired,
-  toggleETF: PropTypes.func.isRequired,
-  setIsETFOpen: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -47,19 +45,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setIsETFOpen: (open, id) => {
-      dispatch(setIsETFOpen(open, id));
-    },
-    toggleETF: (id) => {
-      dispatch(toggleETF(id));
-    },
-
-  }
-};
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(ExpandableTextFieldContainer);

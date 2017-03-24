@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {
   ExpandableTextFieldContainer,
-  toggleETF,
-  setIsETFOpen
+  ETFIconButtonContainer
 } from '../../src/index.js'
 import {connect} from 'react-redux';
 import IconButton from 'material-ui/IconButton';
@@ -13,29 +12,18 @@ import TextField from 'material-ui/TextField';
 class App extends Component {
 
 
-  handleClick = (id) =>{
-    const { toggleETF } = this.props
-
-    toggleETF(id);
-  }
-
   render() {
-    const { setIsETFOpen, toggleETF } = this.props
 
-    const value='test';
 
     return (
 
       <div style={{margin: 25}}>
         <div>
-          <IconButton
-            onTouchTap={()=>this.handleClick('test1')}>
+          <ETFIconButtonContainer id={'test1'}>
             <ActionSearch/>
-          </IconButton>
+          </ETFIconButtonContainer>
 
-          <ExpandableTextFieldContainer
-            id={'test1'}
-            value={value}>
+          <ExpandableTextFieldContainer id={'test1'}>
             <TextField
               ref={(ref) => {if(ref!=null){ref.focus()}}}
               id={'test1'}
@@ -43,14 +31,11 @@ class App extends Component {
           </ExpandableTextFieldContainer>
         </div> <br/>
         <div>
-          <IconButton
-            onTouchTap={()=>this.handleClick('test2')}>
+          <ETFIconButtonContainer id={'test2'}>
             <ActionSearch/>
-          </IconButton>
+          </ETFIconButtonContainer>
 
-          <ExpandableTextFieldContainer
-            id={'test2'}
-            value={value}>
+          <ExpandableTextFieldContainer id={'test2'}>
             <TextField
               ref={(ref) => {if(ref!=null){ref.focus()}}}
               id={'test2'}
@@ -59,14 +44,10 @@ class App extends Component {
         </div><br/>
 
         <div>
-          <IconButton
-            onTouchTap={()=>this.handleClick('test4')}>
+          <ETFIconButtonContainer id={'test4'}>
             <ActionSearch/>
-          </IconButton>
-          <ExpandableTextFieldContainer
-
-            id={'test4'}
-            value={value}>
+          </ETFIconButtonContainer>
+          <ExpandableTextFieldContainer id={'test4'}>
             <TextField
               ref='test4'
               id={'test4'}
@@ -84,7 +65,6 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  //const {  browser } = state;
   return {
 
   };
@@ -93,8 +73,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    setIsETFOpen: (open, id) => {
-      dispatch(setIsETFOpen(open, id));
+    setIsETFOpen: (id, open) => {
+      dispatch(setIsETFOpen(id, open));
     },
     toggleETF: (id) => {
       dispatch(toggleETF(id));
