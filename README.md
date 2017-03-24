@@ -135,10 +135,10 @@ ExpandableTextFieldContainer:
 ETFIconButtonContainer:
 * **id** - (string) **required** - the `id` with witch we identify witch containers act together
 * **value** - (boolean) optional - if you set it to `true` the button will only make the TextField visible. If it is `false` it can only hide the TextField and if you don't set a value the `ETFIconButtonContainer` will act as a toggler for the TextField visibility.
-* **hideOnOpen** - (boolean) opetion - if `true` the botton will hide when the TextField is open
-* **hideOnClose** - (boolean) opetion - if `true` the botton will hide when the TextField is closed
-* **closeOthers** - (boolean) opetion - if `true` by clicking the button all other open ExpandabldeTextFields will closeOthese
-* **onETFChange** - (function) opetion - a callback function that will be triggered on TextField visibility change
+* **hideOnOpen** - (boolean) optional - if `true` the botton will hide when the TextField is open
+* **hideOnClose** - (boolean) optional - if `true` the botton will hide when the TextField is closed
+* **closeOthers** - (boolean) optional - if `true` by clicking the button all other open ExpandabldeTextFields will closeOthese
+* **onETFChange** - (function) optional - a callback function that will be triggered on TextField visibility change
 
 
 ## Contributing
