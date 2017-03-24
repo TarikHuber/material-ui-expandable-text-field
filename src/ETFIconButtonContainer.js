@@ -5,7 +5,8 @@ import IconButton from 'material-ui/IconButton';
 
 function IB(props) {
 
-  const {hideOnOpen, hideOnClose, children, onTouchTap} = props;
+  const { expandableTextFields, id, hideOnOpen, hideOnClose, children, onTouchTap} = props;
+  const open=expandableTextFields[id];
 
   if(open && hideOnOpen===true){
     return null;
@@ -27,12 +28,12 @@ function IB(props) {
 class ETFIconButtonContainer extends Component {
 
   onTouchTap = () => {
-    const { expandableTextFields, toggleETF, setIsETFOpen, value, id, onETFChange} = this.props
+    const { expandableTextFields, toggleETF, setIsETFOpen, value, id, onETFChange, closeOthers} = this.props
 
     if(value!==undefined){
       setIsETFOpen(id, value);
     }else{
-      toggleETF(id);
+      toggleETF(id, closeOthers);
     }
 
     if(onETFChange!==undefined){
@@ -41,16 +42,12 @@ class ETFIconButtonContainer extends Component {
 
   }
 
-
-
   render() {
     const { expandableTextFields, children, id, toggler} = this.props
-    const open=expandableTextFields[id];
 
     return (
       <IB
         onTouchTap={this.onTouchTap}
-        open={open}
         {...(this.props)}
       />
     );
@@ -79,11 +76,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setIsETFOpen: (open, id) => {
-      dispatch(setIsETFOpen(open, id));
+    setIsETFOpen: (id, open) => {
+      dispatch(setIsETFOpen(id, open));
     },
-    toggleETF: (id) => {
-      dispatch(toggleETF(id));
+    toggleETF: (id, closeOthers) => {
+      dispatch(toggleETF(id, closeOthers));
     },
 
   }

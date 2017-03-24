@@ -1,6 +1,6 @@
 {
   "name": "material-ui-expandable-text-field",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "material-ui-expandable-text-field React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -40,8 +40,17 @@
   "author": "Tarik Huber <huber.tarik@gmail.com> (https://github.com/TarikHuber)",
   "homepage": "https://tarikhuber.github.io/material-ui-expandable-text-field/",
   "license": "MIT",
-  "repository": "https://github.com/TarikHuber/material-ui-expandable-text-field",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarikHuber/material-ui-expandable-text-field.git"
+  },
   "keywords": [
     "react-component"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/TarikHuber/material-ui-expandable-text-field/issues"
+  },
+  "directories": {
+    "test": "tests"
+  }
 }
