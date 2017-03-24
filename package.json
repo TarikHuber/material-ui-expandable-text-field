@@ -1,7 +1,7 @@
 {
   "name": "material-ui-expandable-text-field",
-  "version": "0.0.1",
-  "description": "material-ui-expandable-text-field React component",
+  "version": "0.0.2",
+  "description": "Material-UI Expandable TextField is a React-Redux component that uses Material-UI to create a Expandable TextField",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [

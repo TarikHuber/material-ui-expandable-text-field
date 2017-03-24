@@ -45,6 +45,7 @@ class App extends Component {
         <div>
           <ETFIconButtonContainer
             hideOnOpen={true}
+            onETFChange={()=>{console.log('TextField 2 opened')}}
             id={'2'}>
             <ActionSearch/>
           </ETFIconButtonContainer>
